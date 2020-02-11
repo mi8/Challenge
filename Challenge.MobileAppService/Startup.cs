@@ -1,13 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Challenge.Models;
 
 namespace Challenge.MobileAppService
 {
@@ -24,7 +19,6 @@ namespace Challenge.MobileAppService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton<IItemRepository, ItemRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

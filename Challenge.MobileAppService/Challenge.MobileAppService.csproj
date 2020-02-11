@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Challenge.MobileAppService' ">
+    <StartAction>Project</StartAction>
+    <LaunchUrl>api/number/0</LaunchUrl>
+    <ApplicationURL>http://localhost:5000</ApplicationURL>
+  </PropertyGroup>
 </Project>

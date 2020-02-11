@@ -1,26 +1,9 @@
 {
-  "$schema": "http://json.schemastore.org/launchsettings.json",
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://localhost:22633",
-      "sslPort": 44300
-    }
-  },
   "profiles": {
-    "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "api/item",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
     "Challenge.MobileAppService": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/item",
+      "launchUrl": "api/number/0",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

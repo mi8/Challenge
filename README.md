@@ -8,9 +8,8 @@
 - Store it locally to show it offline *
 
 ## 3. Resolve the puzzle
-- Create a page to send a number between 1 and 50 000 to the local API
-- Return the result (0 Winner, 1 Bigger, 2 Smaller) from the API and show it in the app 
-- Iterate less than 20 times to found the correct number 
+- Create a page to find a number between 1 and 50 000 in less than 20 try
+- Call the local API and show the result in the app waitting a second between each call to see the algorithm works 
     
 ## 4. Call the Azure function 
 
