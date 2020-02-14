@@ -1,6 +1,4 @@
-﻿using System;
-
-using Challenge.Models;
+﻿using Challenge.Models;
 
 namespace Challenge.ViewModels
 {

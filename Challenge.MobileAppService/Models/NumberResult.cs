@@ -1,5 +1,4 @@
-﻿using System;
-namespace Challenge.MobileAppService.Models
+﻿namespace Challenge.Models
 {
     public enum TryResult { Winner, Smaller, Bigger };
 

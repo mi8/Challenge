@@ -7,6 +7,6 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Challenge.MobileAppService' ">
     <StartAction>Project</StartAction>
     <LaunchUrl>api/number/0</LaunchUrl>
-    <ApplicationURL>http://localhost:5000</ApplicationURL>
+    <ApplicationURL>https://localhost:5001;http://localhost:5000</ApplicationURL>
   </PropertyGroup>
 </Project>

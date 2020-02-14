@@ -1,9 +1,6 @@
-﻿using System;
+﻿using Challenge.Services;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Challenge.Services;
-using Challenge.Views;
 
 namespace Challenge
 {

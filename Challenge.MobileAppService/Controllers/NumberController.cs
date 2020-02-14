@@ -1,5 +1,5 @@
 ﻿using System;
-using Challenge.MobileAppService.Models;
+using Challenge.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Challenge.Controllers
@@ -40,7 +40,7 @@ namespace Challenge.Controllers
 
         static void ResetNumbers()
         {
-            tryCount = theNumber = 0;
+            theNumber = tryCount = 0;
         }
     }
 }

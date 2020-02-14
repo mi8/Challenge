@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Challenge.Models
+﻿namespace Challenge.Models
 {
     public class Item
     {

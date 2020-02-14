@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.Android", "Challe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.iOS", "Challenge.iOS\Challenge.iOS.csproj", "{F2D624D7-6074-4995-8B81-E74D18C56691}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.MobileAppService", "Challenge.MobileAppService\Challenge.MobileAppService.csproj", "{5D818251-7E21-41BD-972B-83B3B18F7027}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.LocalAPI", "Challenge.MobileAppService\Challenge.LocalAPI.csproj", "{5D818251-7E21-41BD-972B-83B3B18F7027}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge", "Challenge\Challenge.csproj", "{1B34580D-2888-4777-A803-9AEE5A0B37CC}"
 EndProject
