@@ -10548,4 +10548,10 @@ fieldset[disabled] .select select:hover {
   padding: 3rem 1.5rem 6rem;
 }
 
+
+.top-bar-jobs {
+  height: 70px;
+  margin-left: auto;
+  margin-right: auto;
+}
 /*# sourceMappingURL=bulma-theme.css.map */
