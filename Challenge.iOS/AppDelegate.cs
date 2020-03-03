@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Lottie.Forms.iOS.Renderers;
 using UIKit;
 
 namespace Challenge.iOS
@@ -22,11 +23,22 @@ namespace Challenge.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
-            global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            if (Window == null)
+            {
+                Window = new UIWindow(frame: UIScreen.MainScreen.Bounds);
+                var initialViewController = new SplashViewController();
+                Window.RootViewController = initialViewController;
+                Window.MakeKeyAndVisible();
 
-            return base.FinishedLaunching(app, options);
+                return true;
+            }
+            else
+            {
+                global::Xamarin.Forms.Forms.Init();
+                AnimationViewRenderer.Init();
+                LoadApplication(new App());
+                return base.FinishedLaunching(app, options);
+            }
         }
     }
 }

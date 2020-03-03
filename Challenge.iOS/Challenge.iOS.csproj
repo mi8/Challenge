@@ -70,6 +70,10 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplashViewController.cs" />
+    <Compile Include="SplashViewController.designer.cs">
+      <DependentUpon>SplashViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -124,6 +128,8 @@
     <BundleResource Include="Resources\xamarin_logo%402x.png" />
     <BundleResource Include="Resources\xamarin_logo%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <BundleResource Include="trophy.json" />
+    <InterfaceDefinition Include="SplashViewController.xib" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="OpenTK-1.0" />
@@ -148,6 +154,9 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms">
       <Version>4.5.0.356</Version>
+    </PackageReference>
+    <PackageReference Include="Com.Airbnb.iOS.Lottie">
+      <Version>2.5.10</Version>
     </PackageReference>
   </ItemGroup>
 </Project>
