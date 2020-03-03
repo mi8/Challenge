@@ -224,12 +224,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\logomi8.json" />
-    <AndroidAsset Include="Assets\mi8abdel.json" />
-    <AndroidAsset Include="Assets\morphinglogomi8.json" />
-    <AndroidAsset Include="Assets\morphingmi8.json" />
-    <AndroidAsset Include="Assets\settings_lottie.json" />
-    <AndroidAsset Include="Assets\16773-fire.json" />
     <AndroidAsset Include="Assets\trophy.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
