@@ -13,7 +13,7 @@
 ## 3. Resolve the puzzle
 
 - Create a page to find a number between 1 and 50 000 in less than 20 tries
-- Run the local API located in 'Challenge.MobileAppService' folder, call the `api/number` route and show the result in the app
+- Run the local API located in 'Challenge.MobileAppService' folder, call the `api/number` route in a loop then show the number found and the number of tries in the app
 
 ## 4. Submit a Pull request
 
