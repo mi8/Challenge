@@ -6,14 +6,14 @@
 
 ## 2. Make a beautiful app from content you like
 
-- Get the content from an API using HttpClient
+- Get the content from a public API of your choice (e.g. https://elephant-api.herokuapp.com) using HttpClient
 - Display it and make it looks good
 - Store it locally to show it offline *
 
 ## 3. Resolve the puzzle
 
 - Create a page to find a number between 1 and 50 000 in less than 20 tries
-- Call the local API and show the result in the app
+- Run the local API located in 'Challenge.MobileAppService' folder, call the `api/number` route and show the result in the app
 
 ## 4. Submit a Pull request
 
@@ -21,4 +21,4 @@ When you finished previous steps, send us a pull request to show us your work.
 
 > We wish you success and see you soon 🎉
 
-\* is a bonus
+\* Bonus
