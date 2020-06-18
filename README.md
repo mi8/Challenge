@@ -15,11 +15,9 @@
 - Create a page to find a number between 1 and 50 000 in less than 20 tries
 - Call the local API and show the result in the app
 
-## 4. Call the Azure function
+## 4. Submit a Pull request
 
-When you finished previous steps, send us your e-mail by calling the azure function https://...
-
-## 5. Follow instructions in the e-mail you receive
+When you finished previous steps, send us a pull request to show us your work.
 
 > We wish you success and see you soon 🎉
 
