@@ -152,6 +152,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Net.Http">
+      <Version>2.2.29</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms">
       <Version>4.5.0.356</Version>
     </PackageReference>

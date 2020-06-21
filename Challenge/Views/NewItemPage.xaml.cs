@@ -19,8 +19,8 @@ namespace Challenge.Views
 
             Item = new Item
             {
-                Text = "Item name",
-                Description = "This is an item description."
+                Name = "System test 1",
+                Distance = 1
             };
 
             BindingContext = this;

@@ -26,8 +26,8 @@ namespace Challenge.Views
 
             var item = new Item
             {
-                Text = "Item 1",
-                Description = "This is an item description."
+                Name = "System test 1",
+                Distance = 1
             };
 
             viewModel = new ItemDetailViewModel(item);
