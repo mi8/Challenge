@@ -59,7 +59,7 @@ namespace Challenge.Services
 
         public async Task<bool> UpdateItemAsync(Item item)
         {
-            if (item == null || item.Id == null || !IsConnected)
+            if (item == null || item.GuidId == null || !IsConnected)
                 return false;
 
             var serializedItem = JsonConvert.SerializeObject(item);

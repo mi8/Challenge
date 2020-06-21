@@ -7,6 +7,9 @@ using Xamarin.Forms;
 
 using Challenge.Models;
 using Challenge.Views;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace Challenge.ViewModels
 {
@@ -17,7 +20,7 @@ namespace Challenge.ViewModels
 
         public ItemsViewModel()
         {
-            Title = "Browse";
+            Title = "Systems in 20 ly around SOL";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
@@ -35,8 +38,22 @@ namespace Challenge.ViewModels
 
             try
             {
+                //Items.Clear();
+                //var items = await DataStore.GetItemsAsync(true);
+                //foreach (var item in items)
+                //{
+                //    Items.Add(item);
+                //}
+
+
+                //HTTP request
+                HttpClient client = new HttpClient();
+                string baseURL = "https://www.edsm.net/api-v1/sphere-systems";
+                string requestParams = $"?systemName*={"Sol"}&radius={20}";
+                var response = await client.GetStringAsync(baseURL + requestParams);
+
                 Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var items = JsonConvert.DeserializeObject<List<Item>>(response);
                 foreach (var item in items)
                 {
                     Items.Add(item);
