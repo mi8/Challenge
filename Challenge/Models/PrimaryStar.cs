@@ -4,11 +4,10 @@ using System.Text;
 
 namespace Challenge.Models
 {
-    class SolarSystem
+    public class PrimaryStar
     {
-        public double Distance { get; set; }
+        public string Type { get; set; }
         public string Name { get; set; }
-        public int Id { get; set; }
-        public Coords Coords { get; set; }
+        public bool IsScoopable { get; set; }
     }
 }

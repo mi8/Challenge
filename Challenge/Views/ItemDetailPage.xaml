@@ -5,5 +5,7 @@
         <Label Text="{Binding Item.Name}" d:Text="System name" FontSize="Small" />
         <Label Text="Distance from SOL:" FontSize="Medium" />
         <Label Text="{Binding Item.Distance, StringFormat='{0}ly'}" d:Text="System Distance from SOL" FontSize="Small" />
+        <Label Text="PrimaryStar name:" FontSize="Medium" />
+        <Label Text="{Binding Item.PrimaryStar.Name}" d:Text="PrimaryStar name" FontSize="Small" />
     </StackLayout>
 </ContentPage>

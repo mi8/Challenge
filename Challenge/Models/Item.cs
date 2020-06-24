@@ -9,7 +9,10 @@
         public string GuidId { get; set; }
         public double Distance { get; set; }
         public string Name { get; set; }
+        public int BodyCount { get; set; }
         public int Id { get; set; }
         public Coords Coords { get; set; }
+        public Information Information { get; set; }
+        public PrimaryStar PrimaryStar { get; set; }
     }
 }

@@ -20,6 +20,7 @@
                     <StackLayout Padding="10">
                         <Label Text="{Binding Name}" d:Text="{Binding .}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
                         <Label Text="{Binding Distance, StringFormat='Distance from SOL = {0}ly'}" d:Text="Distance from SOL" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
+                        <Label Text="{Binding BodyCount, StringFormat='Number of bodies = {0}'}" d:Text="BodyCount" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnItemSelected">
                             </TapGestureRecognizer>

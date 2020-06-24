@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Challenge.Views.PuzzlePage" xmlns:vm="clr-namespace:Challenge.ViewModels" Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:PuzzleViewModel />
+    </ContentPage.BindingContext>
+        <ContentPage.Content>
+                <StackLayout>
+                    <Label Text="Welcome to the puzzle!"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                    <Label Text="{Binding FoundNumber, StringFormat='the number is {0} !'}" 
+                    d:Text="search number" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="20"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                    <Label Text="{Binding NumberOfTry, StringFormat='found in {0} tries...'}" 
+                    d:Text="search number" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+        </ContentPage.Content>
+</ContentPage>
