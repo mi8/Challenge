@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using Challenge.Models;
 using Newtonsoft.Json;
 using System;
+using System.Threading.Tasks;
 
 namespace Challenge.ViewModels
 {
@@ -13,15 +14,29 @@ namespace Challenge.ViewModels
         public int NumberOfTry { get; set; }
         public int FoundNumber { get; set; }
 
-        public ICommand FindTheNumberCommand { get; set; }
+        public string EndText { get; set; } = "Congratulations !";
+
+        public bool IsRefreshing { get; set; }
+
+        public Command FindTheNumberCommand
+        {
+            get
+            {
+                return findTheNumberCommand = new Command(() =>
+                {
+                    FindTheNumber();
+                });
+            }
+        }
+
+        private Command findTheNumberCommand;
 
         //public string ApiBaseAddress { get; set; }
         //public string ApiRoute { get; set; }
 
         public PuzzleViewModel()
         {
-            Title = "Puzzle";
-            FindTheNumberCommand = new Command(() => FindTheNumber());
+            Title = "Mi8 Puzzle Challenge";
 
             FindTheNumber();
         }
@@ -29,49 +44,52 @@ namespace Challenge.ViewModels
 
 
         //Fake Api :cry:
-        private void FindTheNumber()
+        public void FindTheNumber()
         {
             string response;
 
-            FakeApiResult tryResult = new FakeApiResult(0, "start");
+            FakeApiResult tryResult; 
 
-            int startingMin = 0;
-            int startingMax = 50000;
-
-            Dual min = new Dual(0, 0);
-            Dual max = new Dual(50000, 50000);
-            Dual testNumber = new Dual(25000, 25000);
+            int min = 0;
+            int max = 50000;
+            int testNumber = 25000;
 
 
-            while (tryResult.Result != FakeApiTryResult.Winner.ToString())
+            while (true)
             {
-                response = FakeApi.FakeApiRequest(testNumber.Current);
+                response = FakeApi.FakeApiRequest(testNumber);
                 tryResult = JsonConvert.DeserializeObject<FakeApiResult>(response);
 
-                
+
 
                 if (tryResult.Result == FakeApiTryResult.Smaller.ToString())    // min.current do not change, max.current change to testNumber.current  
                 {
-                    max.Current = testNumber.Current;
-                    testNumber.Last = testNumber.Current;
-                    testNumber.Current = GetMiddle(min.Current, max.Current);
+                    max = testNumber;
+                    testNumber = GetMiddle(min, max);
                     NumberOfTry = tryResult.Try;
                 }
                 else if (tryResult.Result == FakeApiTryResult.Bigger.ToString())    // min.current change to testNumber.current, max.current do not change
                 {
-                    min.Current = testNumber.Current;
-                    testNumber.Last = testNumber.Current;
-                    testNumber.Current = GetMiddle(min.Current, max.Current);
+                    min = testNumber;
+                    testNumber = GetMiddle(min, max);
                     NumberOfTry = tryResult.Try;
+                }
+                else if (tryResult.Result == "Try again !")
+                {
+                    EndText = "the algorithm is lost...";
+                    break;
                 }
                 else
                 {
+                    EndText = "Congratulations !";
                     break;
                 }
             }
 
-            FoundNumber = testNumber.Current;
+            FoundNumber = testNumber;
             NumberOfTry++;
+
+            IsRefreshing = false;
         }
 
 
@@ -80,17 +98,7 @@ namespace Challenge.ViewModels
             return min + ((max - min) / 2);
         }
 
-        private class Dual
-        {
-            public Dual(int current, int last)
-            {
-                Current = current;
-                Last = last;
-            }
-
-            public int Current { get; set; }
-            public int Last { get; set; }
-        }
+        
 
         //Local Api - TODO : Don't work atm
         //private void ConfigureApiAddress()

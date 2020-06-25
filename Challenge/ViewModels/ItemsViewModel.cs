@@ -24,7 +24,7 @@ namespace Challenge.ViewModels
 
         public ItemsViewModel()
         {
-            Title = "Systems 20 ly from SOL";
+            Title = "Star Systems around SOL";
 
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
@@ -47,7 +47,7 @@ namespace Challenge.ViewModels
 
             if (CurrentConnectivity == NetworkAccess.Internet)
             {
-                Title = "Systems 20 ly from SOL";
+                Title = "Star Systems around SOL";
 
                 IsBusy = true;
 
@@ -130,74 +130,5 @@ namespace Challenge.ViewModels
                 }
             }  
         }
-
-        ////Update Title
-        //Title = "OFFLINE mode";
-
-        //        string offlineData = File.ReadAllText(debugFileName);
-        //var offlineItems = JsonConvert.DeserializeObject<List<Item>>(offlineData);
-
-        //Items.Clear();
-
-        //        foreach (var item in offlineItems)
-        //        {
-        //            //Store them
-        //            Items.Add(item);
-        //        }
-
-    //BackUp
-    //async Task ExecuteLoadItemsCommand()
-    //{
-    //    IsBusy = true;
-
-    //    try
-    //    {
-    //        ////Master:
-    //        //Items.Clear();
-    //        //var items = await DataStore.GetItemsAsync(true);
-    //        //foreach (var item in items)
-    //        //{
-    //        //    Items.Add(item);
-    //        //}
-
-
-    //        //Get Data from EDSM api:
-    //        HttpClient client = new HttpClient();
-    //        //Get all systems around SOL
-    //        string baseURL = "https://www.edsm.net/api-v1/sphere-systems";
-    //        string requestParams = $"?systemName={"Sol"}&radius={20}";
-    //        var response = await client.GetStringAsync(baseURL + requestParams);
-    //        var items = JsonConvert.DeserializeObject<List<Item>>(response);
-
-
-    //        Items.Clear();
-
-    //        //Add all detailed systems
-    //        foreach (var item in items)
-    //        {
-    //            ////Add System details
-    //            //string urlDetail = "https://www.edsm.net/api-v1/system";
-    //            ////string paramsDetail = $"?systemName={item.Name}&showCoordinates={1}&showInformation={1}&showPrimaryStar={1}";
-    //            //string paramsDetail = $"?systemName={item.Name}&showCoordinates={1}&showPrimaryStar={1}";
-    //            //var responseDetailed = await client.GetStringAsync(urlDetail + paramsDetail);
-    //            //var detailedItem = JsonConvert.DeserializeObject<Item>(responseDetailed);
-
-    //            ////item.Coords = detailedItem.Coords;
-    //            ////if (detailedItem.Information != null) item.Information = detailedItem.Information;
-    //            ////if(detailedItem.PrimaryStar != null) item.PrimaryStar = detailedItem.PrimaryStar;
-
-    //            //Store them
-    //            Items.Add(item);
-    //        }
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        Debug.WriteLine(ex);
-    //    }
-    //    finally
-    //    {
-    //        IsBusy = false;
-    //    }
-    //}
-}
+    }
 }

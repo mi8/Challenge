@@ -22,10 +22,10 @@
     </Shell.Resources>
     <!-- Your Pages -->
     <TabBar>
-        <Tab Title="Browse" Icon="tab_feed.png">
+        <Tab Title="System Finder" Icon="tab_solarS.png">
             <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
         </Tab>
-        <Tab Title="Puzzle" Icon="tab_about.png">
+        <Tab Title="Number Finder" Icon="tab_puzzle.png">
             <ShellContent ContentTemplate="{DataTemplate local:PuzzlePage}" />
         </Tab>
         <Tab Title="About" Icon="tab_about.png">
@@ -62,3 +62,13 @@
 
     -->
 </Shell>
+
+<!--Setter Property="Shell.BackgroundColor" Value="{StaticResource NavigationPrimary}" />
+<Setter Property="Shell.ForegroundColor" Value="White" />
+<Setter Property="Shell.TitleColor" Value="White" />
+<Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+<Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+<Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+<Setter Property="Shell.TabBarForegroundColor" Value="White" />
+<Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF" />
+<Setter Property="Shell.TabBarTitleColor" Value="White" /-->

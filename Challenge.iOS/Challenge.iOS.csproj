@@ -162,4 +162,16 @@
       <Version>2.5.10</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tab_puzzle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tab_SolarS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tab_star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\BannerDetail.png" />
+  </ItemGroup>
 </Project>

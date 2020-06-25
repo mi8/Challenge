@@ -1,11 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Challenge.Views.ItemDetailPage" Title="{Binding Title}">
-    <StackLayout Spacing="20" Padding="15">
-        <Label Text="System name:" FontSize="Medium" />
-        <Label Text="{Binding Item.Name}" d:Text="System name" FontSize="Small" />
-        <Label Text="Distance from SOL:" FontSize="Medium" />
-        <Label Text="{Binding Item.Distance, StringFormat='{0}ly'}" d:Text="System Distance from SOL" FontSize="Small" />
-        <Label Text="PrimaryStar name:" FontSize="Medium" />
-        <Label Text="{Binding Item.PrimaryStar.Name}" d:Text="PrimaryStar name" FontSize="Small" />
-    </StackLayout>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="NavBarIcon"  Icon="tab_star.png" />
+    </ContentPage.ToolbarItems>
+    <Grid ColumnSpacing="0" BackgroundColor="#2B2A2B">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="{StaticResource Accent}" HeightRequest="120" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Vertical"  HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,0,0,0" VerticalOptions="FillAndExpand">
+                    <Image Source="BannerDetail.png" Aspect="AspectFill" HorizontalOptions="End" VerticalOptions="Center" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+        <StackLayout Spacing="0" Padding="10" BackgroundColor="#2B2A2B">
+            <Label Text="System name" FontSize="Small" HorizontalOptions="End" BackgroundColor="#2B2A2B" TextColor="#C7BECC" />
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="#C4B5C9"/>
+            <Label Text="{Binding Item.Name}" d:Text="System name" FontSize="40" FontAttributes="Bold" BackgroundColor="#2B2A2B" TextColor="#E0D5E6" VerticalTextAlignment="End" />
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="40" Color="#2B2A2B"/>
+
+            <Label Text="Distance from SOL" FontSize="Small"  BackgroundColor="#2B2A2B" TextColor="#C7BECC" />
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="#C4B5C9"/>
+            <Label Text="{Binding Item.Distance, StringFormat='{0} ly'}" d:Text="Distance from SOL" HorizontalOptions="End" FontSize="30" BackgroundColor="#2B2A2B" TextColor="#E0D5E6" />
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="20" Color="#2B2A2B"/>
+
+            <Label Text="Number of bodies in the system" FontSize="Small" BackgroundColor="#2B2A2B" TextColor="#C7BECC" />
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="#C4B5C9"/>
+            <Label Text="{Binding Item.BodyCount}" d:Text="PrimaryStar name" HorizontalOptions="End" FontSize="30" BackgroundColor="#2B2A2B" TextColor="#E0D5E6" />
+        </StackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>

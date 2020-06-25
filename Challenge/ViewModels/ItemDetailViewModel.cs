@@ -16,7 +16,8 @@ namespace Challenge.ViewModels
 
         public ItemDetailViewModel(Item item = null)
         {
-            Title = item?.Name;
+            //Title = item?.Name;
+            Title = "Star System Details";
             Item = item;
 
             //UpdateDetailsData();

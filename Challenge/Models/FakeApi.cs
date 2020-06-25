@@ -14,12 +14,12 @@ namespace Challenge.Models
         public static string FakeApiRequest(int number)
         {
             if (theNumber == 0)
-                theNumber = new Random().Next(1, 50_000);
+                theNumber = new Random().Next(1, 50000);
 
             if (tryCount == 20)
             {
                 ResetNumbers();
-                //return ConvertResultToJson(new FakeApiResult { Result = "Try again !", Try = ++tryCount });
+                
                 return ConvertResultToJson(new FakeApiResult (++tryCount, "Try again !"));
             }
 
