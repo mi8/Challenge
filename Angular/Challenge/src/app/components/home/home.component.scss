@@ -1,0 +1,35 @@
+.text-body{
+    font-size: large;
+    margin-left: 20px;
+    margin-top: 10px;
+    line-height: 1.3;
+}
+
+.description{
+
+    padding-top: 20px;
+}
+
+a{
+    color: rgb(231, 113, 17);
+    text-decoration: none;
+}
+
+a:hover{
+    font-size: x-large;
+    .hidden{
+        display: none;
+    }
+    img{
+        display: inline;
+    }
+}
+
+.text-footer{
+    font-size: small
+}
+img{
+    display: none;
+    height: 10%;
+    width: 10%;
+}

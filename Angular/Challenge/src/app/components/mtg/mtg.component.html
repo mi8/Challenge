@@ -1,0 +1,21 @@
+<nb-card>
+
+    <nb-card-header>
+        <h3>Magic: The Gathering</h3>
+    </nb-card-header>
+
+    <nb-card-body>
+        <ul class="display">  
+            <li *ngFor="let item of model?.data" display="grid">               
+                <!-- <img [routerLink]="['../mtgdetails', item.id]" class="zoom" [src]="item.image_uris.small" alt="{{item.name}}"/> -->
+                <img [routerLink]="['../mtgdetails', item.id]" class="zoom" [src]="item.image_uris.small" alt="{{item.name}}"/>     
+            </li>                 
+    </ul>
+    
+    <div class="button">
+        <button nbButton (click)="clickPrevious()">Previous</button>
+        <button nbButton (click)="clickNext()">Next</button>
+    </div>
+    </nb-card-body>
+
+</nb-card>

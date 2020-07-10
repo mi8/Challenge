@@ -1,0 +1,77 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+// .container{
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   //justify-content: center;
+// }
+
+// .try{
+//   min-width: "400px";
+//   display: block;
+// }
+
+.winner{
+  color: green;
+}
+
+.display{
+  display: flex;
+  margin-right: 20px;
+}
+
+.p{
+  margin-right: 20px;
+}
+
+// .row {
+//   display: flex;
+// }
+
+// .column {
+//   flex: 50%;
+// }
+
+ul {
+  max-width: 750px;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  padding-left: 0;
+  // border: 1px solid blue;    
+}
+
+li {
+  list-style: inside;
+  padding: 5px;
+  background-color: rgba(67, 67, 177, 0.637);
+  color: rgb(255, 255, 255);    
+  list-style-type: none;
+  text-align: center;
+}
+
+th,td{
+// border-bottom: dotted;
+// border-color: red;
+min-width: 100px;
+vertical-align: top;
+text-align: center;
+}
+
+.userNumber{
+min-width: 750px;
+}
+
+.try{
+  padding-top: 21px;
+}

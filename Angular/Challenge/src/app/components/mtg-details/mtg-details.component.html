@@ -1,0 +1,45 @@
+<nb-card>
+
+    <nb-card-header>
+        <ul>
+            <li>
+                <img src="../../../assets/m15.svg" alt="logo" height="100px" width="120px"/>               
+            </li>
+            <li class="align">
+                {{model.name}}
+            </li>
+            <li class="align">
+                {{model.rarity}}
+            </li>            
+        </ul>     
+    </nb-card-header>
+
+    <nb-card-body>
+        <table>
+            <td>
+                <img [src]="model.image_uris.png" width="372.5px" height="520px"/>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td class="td1">
+                            Price: {{model.prices.usd}} $ - {{model.prices.eur}} eur
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                            Release date : {{model.released_at}}
+                        </td>
+                        
+                    </tr>
+                </table>    
+            </td>   
+        </table>
+    </nb-card-body>
+
+    <nb-card-footer>
+        <button nbButton routerLink="/mtg">Back to list</button>
+    </nb-card-footer>
+
+</nb-card>

@@ -1,0 +1,72 @@
+<nb-card>
+
+    <nb-card-header>
+        <h2>Guess the Number !</h2> 
+        <p>
+            Try to guess the computer generated random number between 1 and 50 000 in less than 20 tries ! 
+        </p>
+        <p *ngIf="isInit==false || numberResult.result == 'Winner'">
+            <button nbButton (click)="initNumber()">Start the game</button>
+        </p>
+        <p *ngIf="isInit==true && numberResult.result != 'Winner'">
+            <button nbButton (click)="initNumberInGame()">Restart the game</button>
+        </p>
+        <div *ngIf="numberResult.result == 'Winner'">
+                <h2 class="winner">{{numberResult.result}} !</h2><h4>You found the right number in {{20-NoOfTries}} tries !</h4>
+        </div>        
+    </nb-card-header>
+    
+    <nb-card-body *ngIf="isInit == true">       
+        <div class="display">
+            <p class="p">
+                Your Guess:  <input type="number" nbInput [(ngModel)]="inputNumber" />
+            </p>
+            <p>
+                <button nbButton (click)="onClick()" [disabled]="!inputNumber || inputNumber < 1 || inputNumber > 50000">Submit your guess</button>
+            </p>           
+        </div>
+    </nb-card-body>
+
+    
+
+</nb-card>
+
+<nb-card>
+
+    <nb-card-body *ngIf="isInit == true">
+        <table>
+            <tr>
+                <th>
+                    Remaining tries : 
+                </th>
+                <th></th>
+                <th>
+                    Your previous numbers :
+                </th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="try">            
+                    <p>
+                        <!-- <br/> -->
+                        {{NoOfTries}}
+                    </p>
+                </td>
+                <td></td>
+                <td class="userNumber">            
+                    <ul>
+                        <li *ngFor="let item of inputNumbers; let i = index">
+                        <!-- {{i + 1}} :   {{item}} -->
+                        {{item}}
+                        </li>
+                    </ul>
+                </td>
+            </tr> 
+        </table>
+    </nb-card-body>
+
+</nb-card>

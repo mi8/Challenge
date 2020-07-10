@@ -1,0 +1,35 @@
+td{
+    vertical-align: top;
+    font-size: x-large;
+    color: rgb(226, 113, 21);
+    padding: 10px;
+}
+p{
+    text-align: center;
+    color: white;
+    font-size: xx-large;
+}
+.td1{
+    padding-top: 0px;
+}
+.p-table{
+    font-size: x-large;
+}
+
+ul{
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    padding-left: 0;
+}
+
+.align{
+    padding-top: 45px;
+    font-size: xx-large;
+}
+  
+li{
+    list-style: none;
+    padding: 5px;    
+    list-style-type: none;
+    text-align: center;
+}
