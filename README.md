@@ -1,5 +1,5 @@
 # 🏆 Complete the challenge and join the team !
-## 1. Clone this repository
+## 1. Fork this repository
 
 - Use the Xamarin or Angular project following your preferences
 - You could even complete both if you are a full stack developer
