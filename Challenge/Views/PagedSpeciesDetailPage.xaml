@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Challenge.Views.PagedSpeciesDetailPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Name" Style="{StaticResource labelTitle}"/>
+                <Label Text="Classification" Grid.Row="1" Style="{StaticResource labelTitle}"/>
+                <Label Text="Designation" Grid.Row="2" Style="{StaticResource labelTitle}"/>
+                <Label Text="Average Height" Grid.Row="3" Style="{StaticResource labelTitle}"/>
+                <Label Text="Average Lifespan" Grid.Row="4" Style="{StaticResource labelTitle}"/>
+                <Label Text="Common Eye Colors" Grid.Row="5" Style="{StaticResource labelTitle}"/>
+                <Label Text="Common Hair Colors" Grid.Row="6" Style="{StaticResource labelTitle}"/>
+                <Label Text="Common Skin Colors" Grid.Row="7" Style="{StaticResource labelTitle}"/>
+                <Label Text="Language" Grid.Row="8" Style="{StaticResource labelTitle}"/>
+
+                <Label Text="{Binding Name}" Grid.Column="2" Style="{StaticResource labelDescription}"/>
+                <Label Text="{Binding Classification}" Grid.Column="2" Grid.Row="1" Style="{StaticResource labelDescription}"/>
+                <Label Text="{Binding Designation}" Grid.Column="2" Grid.Row="2" Style="{StaticResource labelDescription}"/>
+                <Label Text="{Binding AverageHeight}" Grid.Column="2" Grid.Row="3" Style="{StaticResource labelDescription}"/>
+                <Label Text="{Binding AverageLifespan}" Grid.Column="2" Grid.Row="4" Style="{StaticResource labelDescription}"/>
+                <Label Text="{Binding CommonEyeColors}" Grid.Column="2" Grid.Row="5" Style="{StaticResource labelDescription}"/>
+                <Label Text="{Binding CommonHairColors}" Grid.Column="2" Grid.Row="6" Style="{StaticResource labelDescription}"/>
+                <Label Text="{Binding CommonSkinColors}" Grid.Column="2" Grid.Row="7" Style="{StaticResource labelDescription}"/>
+                <Label Text="{Binding Language}" Grid.Column="2" Grid.Row="8" Style="{StaticResource labelDescription}"/>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

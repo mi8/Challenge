@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Challenge.Views.PagedStarshipsDetailPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Name" Style="{StaticResource labelTitle}"/>
+                <Label Text="Model" Grid.Row="1" Style="{StaticResource labelTitle}"/>
+                <Label Text="Starship Class" Grid.Row="2" Style="{StaticResource labelTitle}"/>
+                <Label Text="Manufacturer" Grid.Row="3" Style="{StaticResource labelTitle}"/>
+                <Label Text="Cost In Credits" Grid.Row="4" Style="{StaticResource labelTitle}"/>
+                <Label Text="Length" Grid.Row="5" Style="{StaticResource labelTitle}"/>
+                <Label Text="Crew" Grid.Row="6" Style="{StaticResource labelTitle}"/>
+                <Label Text="Passengers" Grid.Row="7" Style="{StaticResource labelTitle}"/>
+                <Label Text="Max Atmospheric Speed" Grid.Row="8" Style="{StaticResource labelTitle}"/>
+                <Label Text="Hyperdrive Rating" Grid.Row="9" Style="{StaticResource labelTitle}"/>
+                <Label Text="MGLT" Grid.Row="10" Style="{StaticResource labelTitle}"/>
+                <Label Text="Cargo Capacity" Grid.Row="11" Style="{StaticResource labelTitle}"/>
+                <Label Text="Consumables" Grid.Row="12" Style="{StaticResource labelTitle}"/>
+
+                <Label Text="{Binding Name}" Grid.Column="2" Style="{StaticResource labelDescription}"/>
+                <Label Text="{Binding Model}" Grid.Column="2" Grid.Row="1" Style="{StaticResource labelDescription}"/>
+                <Label Text="{Binding StarshipClass}" Grid.Column="2" Grid.Row="2" Style="{StaticResource labelDescription}"/>
+                <Label Text="{Binding Manufacturer}" Grid.Column="2" Grid.Row="3" Style="{StaticResource labelDescription}"/>
+                <Label Text="{Binding CostInCredits}" Grid.Column="2" Grid.Row="4" Style="{StaticResource labelDescription}"/>
+                <Label Text="{Binding Length}" Grid.Column="2" Grid.Row="5" Style="{StaticResource labelDescription}"/>
+                <Label Text="{Binding Crew}" Grid.Column="2" Grid.Row="6" Style="{StaticResource labelDescription}"/>
+                <Label Text="{Binding Passengers}" Grid.Column="2" Grid.Row="7" Style="{StaticResource labelDescription}"/>
+                <Label Text="{Binding MaxAtmosphericSpeed}" Grid.Column="2" Grid.Row="8" Style="{StaticResource labelDescription}"/>
+                <Label Text="{Binding HyperdriveRating}" Grid.Column="2" Grid.Row="9" Style="{StaticResource labelDescription}"/>
+                <Label Text="{Binding MGLT}" Grid.Column="2" Grid.Row="10" Style="{StaticResource labelDescription}"/>
+                <Label Text="{Binding CargoCapacity}" Grid.Column="2" Grid.Row="11" Style="{StaticResource labelDescription}"/>
+                <Label Text="{Binding Consumables}" Grid.Column="2" Grid.Row="12" Style="{StaticResource labelDescription}"/>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
