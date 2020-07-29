@@ -1,6 +1,7 @@
 .top-bar {
   height: 100px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -10,6 +11,14 @@
     letter-spacing: 1px;
     font-weight: 900;
     text-transform: uppercase;
+    outline: none;
+  }
+  .game{
+    cursor: pointer;
+    transition:transform 0.2s ease;
+    &:hover{
+      transform:scale(1.2)
+    }
   }
 }
 

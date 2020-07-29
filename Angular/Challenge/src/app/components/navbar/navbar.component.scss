@@ -1,0 +1,13 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .is-centered {
+      transition:transform 0.2s ease;
+      cursor: pointer;
+      outline:none;
+      &:hover{
+          transform:scale(1.2)
+      }
+  }
+}

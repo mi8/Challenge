@@ -9,6 +9,7 @@ import { TypecolorsPipe } from './pipe/typecolors.pipe';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { GuessingPageComponent } from './components/guessing-page/guessing-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
     NavbarComponent,
     PokemonsComponent,
     TypecolorsPipe,
-    SpinnerComponent
+    SpinnerComponent,
+    GuessingPageComponent
   ],
   imports: [
     BrowserModule,

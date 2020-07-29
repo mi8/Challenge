@@ -1,5 +1,10 @@
+<app-navbar></app-navbar>
+
+
 <div class="top-bar">
   <h1>List of Pokémons</h1>
+  <br>
+  <h1 class="game" routerLink="/game">Automatic Guessing Game</h1>
 </div>
 <app-spinner *ngIf="!pokemons"></app-spinner>
 <div style="display: flex; justify-content: center; align-items: center;">
@@ -60,8 +65,8 @@
       <th class="SAtck"><abbr title="S.Attack">S.Atk</abbr></th>
       <th class="SDef"><abbr title="S.def">S.Def</abbr></th>
       <th class="Speed"><abbr title="Speed">Speed</abbr></th>
-      <th class="Type"><abbr title="Types">Type(s)</abbr></th>
       <th class="Ability"><abbr title="Ability">Ability</abbr></th>
+      <th class="Type"><abbr title="Types">Type(s)</abbr></th>
     </tr>
   </table>
 </div>
