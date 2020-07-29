@@ -1,0 +1,67 @@
+<div class="top-bar">
+  <h1>List of Pokémons</h1>
+</div>
+<app-spinner *ngIf="!pokemons"></app-spinner>
+<div style="display: flex; justify-content: center; align-items: center;">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="ID"><abbr title="Position">ID</abbr></th>
+        <th class="Picture">Picture</th>
+        <th class="Name"><abbr title="Name">Name</abbr></th>
+        <th class="HP"><abbr title="HP">HP</abbr></th>
+        <th class="Attack"><abbr title="Attack">Attack</abbr></th>
+        <th class="Defense"><abbr title="Defense">Defense</abbr></th>
+        <th class="SAtck"><abbr title="S.Attack">S.Atk</abbr></th>
+        <th class="SDef"><abbr title="S.def">S.Def</abbr></th>
+        <th class="Speed"><abbr title="Speed">Speed</abbr></th>
+        <th class="Ability"><abbr title="Ability">Ability</abbr></th>
+        <th class="Type"><abbr title="Types">Type(s)</abbr></th>
+      </tr>
+    </thead>
+    <tbody *ngIf="pokemons">
+      <tr *ngFor="let item of pokemons.results" class="data">
+        <th class="ID">{{ item.id }}</th>
+        <td class="img">
+          <img
+            *ngIf="item.pokemon.sprites.front_default"
+            [src]="item.pokemon.sprites.front_default"
+            alt=""
+          />
+        </td>
+        <td class="Name">{{ item.name }}</td>
+        <td class="HP">{{ item.pokemon.stats[0].base_stat }}</td>
+        <td class="Attack">{{ item.pokemon.stats[1].base_stat }}</td>
+        <td class="Defense">{{ item.pokemon.stats[2].base_stat }}</td>
+        <td class="SAtck">{{ item.pokemon.stats[3].base_stat }}</td>
+        <td class="SDef">{{ item.pokemon.stats[4].base_stat }}</td>
+        <td class="Speed">{{ item.pokemon.stats[5].base_stat }}</td>
+        <td class="Ability">
+          {{ item.pokemon.abilities[0].ability.name | uppercase }}
+        </td>
+        <td class="Type">
+          <p
+            style="display: flex; flex-direction: column;"
+            class="{{ type.type.name | typecolors }}"
+            *ngFor="let type of item.pokemon.types"
+          >
+            {{ type.type.name }}
+          </p>
+        </td>
+      </tr>
+    </tbody>
+    <tr style="text-align: center;">
+      <th class="ID"><abbr title="Position">ID</abbr></th>
+      <th class="Picture">Picture</th>
+      <th class="Name"><abbr title="Name">Name</abbr></th>
+      <th class="HP"><abbr title="HP">HP</abbr></th>
+      <th class="Attack"><abbr title="Attack">Attack</abbr></th>
+      <th class="Defense"><abbr title="Defense">Defense</abbr></th>
+      <th class="SAtck"><abbr title="S.Attack">S.Atk</abbr></th>
+      <th class="SDef"><abbr title="S.def">S.Def</abbr></th>
+      <th class="Speed"><abbr title="Speed">Speed</abbr></th>
+      <th class="Type"><abbr title="Types">Type(s)</abbr></th>
+      <th class="Ability"><abbr title="Ability">Ability</abbr></th>
+    </tr>
+  </table>
+</div>

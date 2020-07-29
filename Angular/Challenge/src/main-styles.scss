@@ -1,4 +1,11 @@
-
-
 // import fonts ( Lato and Nunito)
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700|Nunito:400,700");
+
+html {
+  background: linear-gradient(90deg, $turquoise, $green);
+}
+
+html,
+body {
+  height: 100%;
+}

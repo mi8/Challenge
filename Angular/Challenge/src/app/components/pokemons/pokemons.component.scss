@@ -1,0 +1,92 @@
+.top-bar {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-family: "Lato";
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+}
+
+.table {
+  width: 80%;
+  height:100%;
+  margin: 50px;
+  thead {
+    background-color: #ebebe5;
+    text-align: center;
+  }
+  .data {
+    text-align: center;
+    th,
+    td {
+      vertical-align: middle;
+      font-size: 15px;
+      font-family: Lato;
+      padding:0.5em 0px;
+    }
+    .ID{
+        background-color: #EBD69D;
+    }
+    .Name{
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .HP{
+        color:#a731b7
+    }
+    .Attack{
+        color:#F08030;
+    }
+    .Defense{
+        color:#586cad;
+    }
+    .SAtck{
+        color:#6890F0;
+    }
+    .SDef{
+        color:#78C850;
+    }
+    .Speed{
+        color:#F85888;
+    }
+    .Ability{
+        font-style:italic;
+        text-decoration: underline;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .table {
+    margin: 0px;
+    width:100%;
+    overflow:hidden;
+    .ID,
+    .HP,
+    .Attack,
+    .Defense,
+    .SAtck,
+    .SDef,
+    .Speed {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .table {
+    .img{
+      width: 50px;
+      height: 50px;
+    }
+    .Ability {
+      display: none;
+    }
+  }
+}
