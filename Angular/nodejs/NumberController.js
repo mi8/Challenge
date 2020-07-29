@@ -49,17 +49,14 @@ app.get('/api/number/:id', (req, res) => {
             if (tries > 0) {
                 randomNumber = parseInt(getRandomNumber(lowest, highest))
                 if (verify(randomNumber, toGuess) === -1) {
-                    console.log(randomNumber, toGuess)
                     tries -= 1
                     tried += 1
                     lowest = randomNumber
                 } if (verify(randomNumber, toGuess) === 1) {
-                    console.log(randomNumber, toGuess)
                     tries -= 1
                     tried += 1
                     highest = randomNumber
                 } if (verify(randomNumber, toGuess) === 0) {
-                    console.log(randomNumber, toGuess)
                     tried += 1
                     console.log(`You won after ${tried} times`)
                     res.json({ message: `You Won, The Computer found the number after ${tried} tries, You got lucky ! The Number was ${toGuess}`,answer:true })
@@ -67,6 +64,7 @@ app.get('/api/number/:id', (req, res) => {
                 }
             } else {
                 res.json({ message: `Sorry, The Computer couldn't find the answer after ${tried} tries, tough Luck , the Number was ${toGuess} and the computer's last number was ${randomNumber}`, answer:false })
+                console.log(`You Lost`)
                 break
             }
         }
