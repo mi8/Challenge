@@ -1,16 +1,12 @@
 import { Component, OnInit } from "@angular/core";
-import { Pokedex } from "../../models/pokedex";
 import { DataService } from "src/app/services/data.service";
 import {
   map,
-  tap,
   switchMap,
-  mergeAll,
-  combineAll,
-  delay,
 } from "rxjs/operators";
 import { zip, merge, Observable, forkJoin } from "rxjs";
 import { Pokemon } from "src/app/models/pokemon";
+import { Pokedex } from 'src/app/models/pokedex';
 
 @Component({
   selector: "app-pokemons",
@@ -47,16 +43,14 @@ export class PokemonsComponent implements OnInit {
               )
             )
           ).pipe(
-            map((pokemons: Array<Pokemon>) => {
+            map((pokemons) => {
               return { ...data, results: pokemons };
             })
           );
         }),
-        tap(console.log),
-        tap((data) => {
-          this.pokemons = data;
-        })
       )
-      .subscribe();
+      .subscribe((data) => {
+          this.pokemons = data;
+        });
   }
 }

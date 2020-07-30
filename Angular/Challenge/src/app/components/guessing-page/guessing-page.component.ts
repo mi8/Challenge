@@ -21,8 +21,7 @@ export class GuessingPageComponent implements OnInit {
     this.number = this.getRandomNumber(1, 50000);
     this.gameService
       .game(this.number)
-      .pipe(tap((element) => (this.message = element.message,this.answer = element.answer)))
-      .subscribe();
+      .subscribe((element) => (this.message = element.message,this.answer = element.answer));
   }
 
   getRandomNumber(min, max) {

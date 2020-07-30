@@ -8,9 +8,9 @@ import { Pokemon } from "../models/pokemon";
   providedIn: "root",
 })
 export class DataService {
-  pokemonUrl:string='https://pokeapi.co/api/v2/pokemon/?offset=0&limit=807'
+  // pokemonUrl:string='https://pokeapi.co/api/v2/pokemon/?offset=0&limit=807'
   singlePokemonUrl: string = "https://pokeapi.co/api/v2/pokemon";
-  // pokemonUrl: string = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20";
+  pokemonUrl: string = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151";
 
   constructor(private http: HttpClient) {}
 
