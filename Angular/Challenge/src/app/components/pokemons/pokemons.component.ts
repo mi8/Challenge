@@ -1,11 +1,13 @@
-import { Component, OnInit } from "@angular/core";
-import { DataService } from "src/app/services/data.service";
+import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service'
 import {
   map,
   switchMap,
-} from "rxjs/operators";
-import { zip, merge, Observable, forkJoin } from "rxjs";
-import { Pokemon } from "src/app/models/pokemon";
+  catchError,
+  take,
+} from 'rxjs/operators';
+import { forkJoin, throwError } from 'rxjs';
+import { Pokemon } from 'src/app/models/pokemon';
 import { Pokedex } from 'src/app/models/pokedex';
 
 @Component({
@@ -15,6 +17,7 @@ import { Pokedex } from 'src/app/models/pokedex';
 })
 export class PokemonsComponent implements OnInit {
   pokemons: Pokedex;
+  errorMessage: string;
 
   constructor(private pokemonService: DataService) {}
 
@@ -48,6 +51,11 @@ export class PokemonsComponent implements OnInit {
             })
           );
         }),
+        catchError((err) => {
+          this.errorMessage = 'an error occured';
+          return throwError(err)
+        }),
+        take(1),
       )
       .subscribe((data) => {
           this.pokemons = data;

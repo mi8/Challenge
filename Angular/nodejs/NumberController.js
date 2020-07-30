@@ -33,10 +33,10 @@ function verify(randomNumber, guess) {
 }
 
 
-app.get('/api/number/:id', (req, res) => {
+app.get('/api/number/:num', (req, res) => {
     let tries = 20
     let tried = 0
-    let toGuess = parseInt(req.params.id)
+    let toGuess = parseInt(req.params.num)
     if (req.params.id == 0) {
         toGuess = parseInt(getRandomNumber(1, 50000))
     }

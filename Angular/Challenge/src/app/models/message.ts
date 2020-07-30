@@ -1,4 +1,4 @@
-export interface Api {
+export interface GuessGame {
     message:string,
     answer:boolean
 }

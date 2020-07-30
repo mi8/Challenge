@@ -10,7 +10,7 @@ import { Pokemon } from "../models/pokemon";
 export class DataService {
   // pokemonUrl:string='https://pokeapi.co/api/v2/pokemon/?offset=0&limit=807'
   singlePokemonUrl: string = "https://pokeapi.co/api/v2/pokemon";
-  pokemonUrl: string = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151";
+  pokemonUrl: string = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=807";
 
   constructor(private http: HttpClient) {}
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { HttpClient } from "@angular/common/http";
-import { Api } from '../models/message'
+import { GuessGame } from '../models/message'
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class NumbersService {
 
   constructor(private http:HttpClient) { }
 
-  game(id:number): Observable<Api>{
-    return this.http.get<Api>(`${this.gameUrl}/${id}`)
+  game(num:number): Observable<GuessGame>{
+    return this.http.get<GuessGame>(`${this.gameUrl}/${num}`)
   }
 }
