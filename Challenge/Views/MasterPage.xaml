@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Challenge.Views.MasterPage"
+             Title="{Binding Title}">
+    <MasterDetailPage.Master>
+        <ContentPage x:Name="Menu" Title="MasterMenu">
+            <ContentPage.Content>
+
+                <StackLayout Orientation="Vertical" BackgroundColor="#262626">
+                    <StackLayout x:Name="MenuLayout" BackgroundColor="#FBA132" HeightRequest="100">
+                        <Image x:Name="LogoMenu" Source="logomenu.png" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnMenuTapped"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    
+                    <ListView x:Name="MenuItems" ItemsSource="{Binding MenuItems}" ItemSelected="MenuItems_ItemSelected" Style="{StaticResource listViewBase}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>                                
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <StackLayout>
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="35"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                    <Image Source="icon.png" WidthRequest="30" HeightRequest="30" Grid.Column="0"/>
+                                                    <StackLayout Orientation="Vertical"  Grid.Column="1" Padding="10">
+                                                        <Label Text="{Binding Text}" Style="{StaticResource labelFirst}" TextColor="#D23936"/>
+                                                        <Label Text="{Binding Detail}" TextColor="#8E241E"/>
+                                                    </StackLayout>
+                                            </Grid>
+                                            <Image Source="separator.png" HorizontalOptions="Fill"/>
+                                        </StackLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

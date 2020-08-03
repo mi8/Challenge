@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Challenge.Views.PagedPlanetsPage"
+             Title="{Binding Title}">
+    <StackLayout>
+        <ListView x:Name="PlanetsList"
+                  ItemsSource="{Binding PagedPlanets}"
+                  Style="{StaticResource listViewBase}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Appearing="ViewCell_Appearing">
+                        <ViewCell.View>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding Name}" Style="{StaticResource labelFirst}"/>
+                                <Label Text="{Binding Climate, StringFormat='Climate : {0}'}"/>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnItemSelected"/>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout Orientation="Horizontal" BackgroundColor="#FBA132">
+            <Button x:Name="PreviousButton" 
+                    Text="Previous"
+                    IsVisible="{Binding PreviousIsVisible}" 
+                    HorizontalOptions="StartAndExpand" 
+                    Clicked="OnPreviousButtonClicked"/>
+            <Button x:Name="NextButton" 
+                    Text="Next" 
+                    IsVisible="{Binding NextIsVisible}" 
+                    HorizontalOptions="EndAndExpand" 
+                    Clicked="OnNextButtonClicked"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
