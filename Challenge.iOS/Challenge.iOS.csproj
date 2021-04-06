@@ -153,10 +153,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms">
-      <Version>4.5.0.356</Version>
+      <Version>5.0.0.2012</Version>
     </PackageReference>
     <PackageReference Include="Com.Airbnb.iOS.Lottie">
-      <Version>2.5.10</Version>
+      <Version>2.5.13</Version>
     </PackageReference>
   </ItemGroup>
 </Project>
