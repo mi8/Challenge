@@ -4,10 +4,18 @@
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/number/0",
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "applicationUrl": "https://localhost:5001;http://localhost:5000"
+      }
+    },
+    "Challenge.LocalAPI": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:23585;http://localhost:41896",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
     }
   }
 }
