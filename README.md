@@ -1,4 +1,4 @@
-# 🏆 Complete the challenge and join the team !!
+# 🏆 Complete the challenge and join the team !
 ## 1. Fork this repository
 
 - Use the Xamarin or Angular project following your preferences
