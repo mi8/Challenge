@@ -63,6 +63,7 @@
     <MtouchArch>ARM64</MtouchArch>
     <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -157,6 +158,9 @@
     </PackageReference>
     <PackageReference Include="Com.Airbnb.iOS.Lottie">
       <Version>2.5.13</Version>
+    </PackageReference>
+    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie">
+      <Version>4.0.9</Version>
     </PackageReference>
   </ItemGroup>
 </Project>
