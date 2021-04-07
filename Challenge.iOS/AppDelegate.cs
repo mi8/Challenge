@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using Foundation;
-using Lottie.Forms.iOS.Renderers;
+//using Lottie.Forms.iOS.Renderers;
+//using Lottie.Forms.Platforms.Ios;
 using UIKit;
 
 namespace Challenge.iOS
@@ -35,8 +35,8 @@ namespace Challenge.iOS
             else
             {
                 global::Xamarin.Forms.Forms.Init();
-                AnimationViewRenderer.Init();
                 LoadApplication(new App());
+                //AnimationViewRenderer.Init();
                 return base.FinishedLaunching(app, options);
             }
         }

@@ -12,8 +12,9 @@
 
 ## 3. Resolve the puzzle
 
-- Create a page to find a number between 1 and 50 000 in less than 20 tries
-- Run the local API located in 'Challenge.MobileAppService' folder, call the `api/number` route in a loop then show the number found and the number of tries in the app
+- Go to https://numberfinderapi.azurewebsites.net to read the documentation of the "Find the Number" API. Use the API to resolve the puzzle
+- The main goal is that you write an algorithm that allows you to find an integer (randomly chosen between 1 and 50000 by the "Find the Number" API.) in 20 trials maximum
+- Create a page in the app to display all your trials using your algorithm
 
 ## 4. Submit a Pull request
 
