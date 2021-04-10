@@ -163,4 +163,10 @@
       <Version>4.0.9</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\default_elephant.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tab_elephant.png" />
+  </ItemGroup>
 </Project>

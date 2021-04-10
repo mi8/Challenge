@@ -1,4 +1,5 @@
 ﻿using Challenge.Models;
+using System;
 
 namespace Challenge.ViewModels
 {

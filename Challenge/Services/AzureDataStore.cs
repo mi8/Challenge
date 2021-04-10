@@ -25,11 +25,24 @@ namespace Challenge.Services
         bool IsConnected => Connectivity.NetworkAccess == NetworkAccess.Internet;
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
         {
+            Console.WriteLine("supertest getitemsasync");
             if (forceRefresh && IsConnected)
             {
-                var json = await client.GetStringAsync($"api/item");
-                items = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<Item>>(json));
+                //var json = await client.GetStringAsync($"api/item");
+                //items = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<Item>>(json));
             }
+
+            items = new List<Item>()
+            {
+                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." }
+            };
+
+            Console.WriteLine(items.ToString());
 
             return items;
         }

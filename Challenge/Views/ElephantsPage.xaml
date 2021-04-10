@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	         xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             mc:Ignorable="d"
+             Title="{Binding Title}"
+             x:Class="Challenge.Views.ElephantsPage"
+             BackgroundColor="#E18644"
+             Padding="20, 0, 20, 0">
+    <ContentPage.ToolbarItems >
+        <ToolbarItem/>
+    </ContentPage.ToolbarItems>
+    <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadElephantsCommand}">
+        <CollectionView x:Name="ElephantsCollectionView" 
+                        ItemsSource="{Binding Elephants}">
+            <d:CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>First Item</x:String>
+                    <x:String>Second Item</x:String>
+                    <x:String>Third Item</x:String>
+                    <x:String>Fourth Item</x:String>
+                    <x:String>Fifth Item</x:String>
+                    <x:String>Sixth Item</x:String>
+                </x:Array>
+            </d:CollectionView.ItemsSource>
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="20" Orientation="Vertical"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame
+                        CornerRadius="20"
+                        Padding="0"
+                        BackgroundColor="#ffffff">
+                        
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="200"/>
+                                <RowDefinition Height="35"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <ffimageloading:CachedImage Source="{Binding Image}" 
+                                LoadingPlaceholder="default_elephant.jpg"
+                                ErrorPlaceholder="default_elephant.jpg"
+                                Aspect="AspectFill" 
+                                Grid.Column="0" 
+                                Grid.Row="0" 
+                                Grid.ColumnSpan="2"/>
+                            <Label Text="{Binding Name}" 
+                                    LineBreakMode="NoWrap" 
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    FontSize="16" 
+                                    Grid.Column="0" 
+                                    Grid.Row="1" 
+                                    Grid.ColumnSpan="1"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"/>
+                            <Label Text="{Binding Species}" 
+                                    LineBreakMode="NoWrap" 
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    FontSize="16" 
+                                    Grid.Column="1" 
+                                    Grid.Row="1" 
+                                    Grid.ColumnSpan="1"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
+</ContentPage>
