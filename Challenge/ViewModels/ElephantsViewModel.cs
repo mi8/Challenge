@@ -19,6 +19,7 @@ namespace Challenge.ViewModels
             Title = "Browse elephants";
             Elephants = new ObservableCollection<Elephant>();
             LoadElephantsCommand = new Command(async () => await ExecuteLoadElephantsCommand());
+            ExecuteLoadElephantsCommand();
         }
 
         async Task ExecuteLoadElephantsCommand()

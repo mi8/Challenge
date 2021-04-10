@@ -17,7 +17,6 @@ namespace Challenge.Views
         public ItemsPage()
         {
             InitializeComponent();
-            Console.WriteLine("supertest itemspage (in view)");
             BindingContext = viewModel = new ItemsViewModel();
         }
 

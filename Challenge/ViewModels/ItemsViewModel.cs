@@ -32,7 +32,6 @@ namespace Challenge.ViewModels
         async Task ExecuteLoadItemsCommand()
         {
             IsBusy = true;
-            Console.WriteLine("supertest loadt items");
             try
             {
                 Items.Clear();

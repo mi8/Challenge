@@ -25,7 +25,6 @@ namespace Challenge.Services
         bool IsConnected => Connectivity.NetworkAccess == NetworkAccess.Internet;
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
         {
-            Console.WriteLine("supertest getitemsasync");
             if (forceRefresh && IsConnected)
             {
                 //var json = await client.GetStringAsync($"api/item");
