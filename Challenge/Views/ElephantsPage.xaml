@@ -60,6 +60,9 @@
                                     HorizontalTextAlignment="Center"
                                     VerticalTextAlignment="Center"/>
                         </Grid>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnElephantSelected"/>
+                        </Frame.GestureRecognizers>
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

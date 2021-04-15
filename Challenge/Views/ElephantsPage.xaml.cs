@@ -23,11 +23,13 @@ namespace Challenge.Views
             BindingContext = viewModel = new ElephantsViewModel();
         }
 
-        async void OnItemSelected(object sender, EventArgs args)
+        async void OnElephantSelected(object sender, EventArgs args)
         {
             var layout = (BindableObject)sender;
             var elephant = (Elephant)layout.BindingContext;
-            //await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(elephant)));
+            await Navigation.PushAsync(new ElephantDetailPage(new ElephantDetailViewModel(elephant)));
         }
+
+
     }
 }
