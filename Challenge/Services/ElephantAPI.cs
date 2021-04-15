@@ -13,7 +13,7 @@ using System.Linq;
 
 namespace Challenge.Services
 {
-    public class ElephantAPI : IData<Elephant>
+    public class ElephantAPI : IDatastore<Elephant>
     {
         HttpClient client;
         IEnumerable<Elephant> elephants;

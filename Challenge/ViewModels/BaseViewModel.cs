@@ -12,8 +12,7 @@ namespace Challenge.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
-        public IData<Elephant> Data => DependencyService.Get<IData<Elephant>>();
+        public IDatastore<Elephant> Data => DependencyService.Get<IDatastore<Elephant>>();
 
         bool isBusy = false;
         public bool IsBusy

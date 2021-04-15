@@ -61,7 +61,7 @@
                     FontSize="16" 
                     Grid.Column="0" 
                     Grid.Row="3" 
-                    Grid.ColumnSpan="1"
+                    Grid.ColumnSpan="2"
                     Margin="30, 0, 0, 0"
                     HorizontalTextAlignment="Start"
                     VerticalTextAlignment="Center"/>
@@ -70,11 +70,13 @@
                     Grid.Column="0" 
                     Grid.Row="4" 
                     Grid.ColumnSpan="2"
-                   Margin="30, 0, 30, 0"
+                    Margin="30, 0, 30, 0"
                     HorizontalTextAlignment="Start"
                     VerticalTextAlignment="Center"/>
             <Button 
                 x:Name="elephant_link_label"
+                BackgroundColor="#198cf7"
+                TextColor="White"
                 Clicked="OnButtonClicked"
                 Grid.Column="0"
                 Grid.Row="5"
