@@ -59,7 +59,6 @@ namespace Challenge.Services
                     default:
                         numberFinderMessage.Text = "Please try again later!";
                         numberFinderMessage.ViewType = NumberFinderMessage.ViewTypeEnum.NumberFinderError;
-                        Console.WriteLine("superdebug Ben on ne devrait pas tomber dans ce cas");
                         break;
                 }
             }

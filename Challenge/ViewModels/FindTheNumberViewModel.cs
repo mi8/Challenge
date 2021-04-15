@@ -30,7 +30,6 @@ namespace Challenge.ViewModels
             Messages.Add(numberFinderAttempt);
             NumberFinderMessage numberFinderResponse = await numberFinderAPI.AttemptFindingNumberAsync(number);
             Messages.Add(numberFinderResponse);
-            Console.WriteLine("supertest submit number");
         }
 
 
