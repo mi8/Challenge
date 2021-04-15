@@ -169,4 +169,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\tab_elephant.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\send_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tab_number_finder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\challenge_logo.png" />
+  </ItemGroup>
 </Project>

@@ -19,13 +19,12 @@ namespace Challenge.Services
         IEnumerable<Elephant> elephants;
         SQLiteAsyncConnection localDb;
         string localDBPath;
-        const string LOCAL_DB_NAME = "Elephant.db";
 
         public ElephantAPI()
         {
             client = new HttpClient();
             client.BaseAddress = new Uri($"{App.ElephantAPIURL}/");
-            localDBPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), LOCAL_DB_NAME);
+            localDBPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), App.LOCAL_DB_NAME);
             localDb = new SQLiteAsyncConnection(localDBPath);
             localDb.CreateTableAsync<Elephant>();
             elephants = new List<Elephant>();
@@ -36,7 +35,7 @@ namespace Challenge.Services
         {
             if (forceRefresh && IsConnected)
             {
-                var json = await client.GetStringAsync("");
+                var json = await client.GetStringAsync("elephants");
                 elephants = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<Elephant>>(json));
                 await localDb.DeleteAllAsync<Elephant>();
                 await localDb.InsertAllAsync(elephants.Take<Elephant>(5));
@@ -44,7 +43,6 @@ namespace Challenge.Services
             else
             {
                 elephants = await localDb.Table<Elephant>().ToListAsync();
-                Console.WriteLine("retrieve elephants" + elephants.FirstOrDefault<Elephant>().Name);
             }
 
             return elephants;
