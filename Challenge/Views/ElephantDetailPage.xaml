@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Challenge.Views.ElephantDetailPage"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ffimageloading:CachedImage x:Name="elephant_image" 
+                                LoadingPlaceholder="default_elephant.jpg"
+                                ErrorPlaceholder="default_elephant.jpg"
+                                Aspect="AspectFill" 
+                                Grid.Column="0" 
+                                Grid.Row="0" 
+                                Grid.ColumnSpan="2"/>
+            <Label x:Name="elephant_name_label"
+                LineBreakMode="NoWrap" 
+                    FontSize="16" 
+                    Grid.Column="0" 
+                    Grid.Row="1" 
+                    Grid.ColumnSpan="1"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"/>
+            <Label x:Name="elephant_species_label"
+                LineBreakMode="NoWrap" 
+                      FontSize="16" 
+                    Grid.Column="1" 
+                    Grid.Row="1" 
+                    Grid.ColumnSpan="1"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"/>
+            <Label x:Name="elephant_birth_label"
+                LineBreakMode="NoWrap" 
+                    FontSize="16" 
+                    Grid.Column="0" 
+                    Grid.Row="2" 
+                    Grid.ColumnSpan="1"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"/>
+            <Label x:Name="elephant_death_label"
+                LineBreakMode="NoWrap" 
+                    FontSize="16" 
+                    Grid.Column="1" 
+                    Grid.Row="2" 
+                    Grid.ColumnSpan="1"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"/>
+            <Label x:Name="elephant_affiliation_label"
+                LineBreakMode="NoWrap" 
+                    FontSize="16" 
+                    Grid.Column="0" 
+                    Grid.Row="3" 
+                    Grid.ColumnSpan="2"
+                    Margin="30, 0, 0, 0"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Center"/>
+            <Label x:Name="elephant_comment_label"
+                    FontSize="16" 
+                    Grid.Column="0" 
+                    Grid.Row="4" 
+                    Grid.ColumnSpan="2"
+                    Margin="30, 0, 30, 0"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Center"/>
+            <Button 
+                x:Name="elephant_link_label"
+                BackgroundColor="#198cf7"
+                TextColor="White"
+                Clicked="OnButtonClicked"
+                Grid.Column="0"
+                Grid.Row="5"
+                Grid.ColumnSpan="2"
+                />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
