@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Challenge.Views.FindTheNumber"
+             Title="{Binding Title}"
+             xmlns:controls="clr-namespace:Challenge.TemplateSelector">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="AttemptTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Frame BackgroundColor="DeepSkyBlue"
+                       CornerRadius="20"                     
+                        Padding="0"
+                        Grid.Row="0" 
+                        Grid.Column="1"
+                    >
+                    <Label  Text="{Binding Text}" 
+                       TextColor="#FFFFFF" 
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       Padding="10"
+                      />
+                </Frame>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="BiggerOrSmallerTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Frame BackgroundColor="Green"
+                       CornerRadius="20"                     
+                        Padding="0"
+                        Grid.Row="0" 
+                        Grid.Column="0"
+                    >
+                <Label  Text="{Binding Text}" 
+                            Padding="10"
+                       TextColor="#FFFFFF" 
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       />
+            </Frame>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="SuccessTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Frame BackgroundColor="Orange"
+                       CornerRadius="20"                     
+                        Padding="0"
+                        Grid.Row="0" 
+                        Grid.Column="0"
+                    >
+                    <Label  Text="{Binding Text}" 
+                            Padding="10"
+                       TextColor="#FFFFFF" 
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       />
+                </Frame>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ResetTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Frame BackgroundColor="Purple"
+                       CornerRadius="20"                     
+                        Padding="0"
+                        Grid.Row="0" 
+                        Grid.Column="0"
+                    >
+                    <Label  Text="{Binding Text}" 
+                            Padding="10"
+                       TextColor="#FFFFFF" 
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       />
+                </Frame>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ErrorTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Frame BackgroundColor="Red"
+                       CornerRadius="20"                     
+                        Padding="0"
+                        Grid.Row="0" 
+                        Grid.Column="0"
+                    >
+                    <Label  Text="{Binding Text}" 
+                            Padding="10"
+                       TextColor="#FFFFFF" 
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       />
+                </Frame>
+            </Grid>
+        </DataTemplate>
+
+        <controls:AttemptAndResponseDataTemplateSelector x:Key="AttemptOrResponseSelector"
+                                             Attempt="{StaticResource AttemptTemplate}"
+                                             BiggerOrSmaller="{StaticResource BiggerOrSmallerTemplate}"
+                                             Success="{StaticResource SuccessTemplate}"
+                                             Reset="{StaticResource ResetTemplate}"
+                                             Error="{StaticResource ErrorTemplate}"/>
+    </ContentPage.Resources>
+    <StackLayout>
+        <CollectionView ItemsUpdatingScrollMode="KeepLastItemInView"
+                    ItemTemplate="{StaticResource AttemptOrResponseSelector}" ItemsSource="{Binding Messages}" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Frame CornerRadius="15" 
+                        BackgroundColor="AliceBlue"
+                        Margin="10"
+                        Padding="10">
+                <StackLayout>
+                    <Entry 
+                        x:Name="number_entry"
+                        Keyboard="Numeric"
+                        Placeholder="Your number"
+                        MaxLength="6"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HeightRequest="40"
+                        TextChanged="OnNumberChanged"
+                    />
+                    <Label x:Name="error_message_label"
+                       IsVisible="true"
+                       TextColor="Red"
+                       HeightRequest="100"
+                       Padding="0,0,0,20"/>
+                </StackLayout>
+            </Frame>
+               
+            <ImageButton x:Name="send_button"
+                    Source="send_icon.png" 
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HeightRequest="30"
+                    BackgroundColor="#FFFFFF"
+                    Clicked="OnNumberSent"/>
+
+        </Grid>
+    </StackLayout>
+    
+</ContentPage>
